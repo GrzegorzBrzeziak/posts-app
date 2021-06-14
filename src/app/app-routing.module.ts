@@ -1,8 +1,11 @@
 import {HomeComponent} from "./component/home/home.component";
-import {AboutComponent} from "./component/about/about/about.component";
+import {AboutComponent} from "./component/about/about.component";
 import {RouterModule, Routes} from "@angular/router";
 import {NgModule} from "@angular/core";
-import {PageNotFoundComponent} from "./component/page-not-found/page-not-found/page-not-found.component";
+import {PageNotFoundComponent} from "./component/page-not-found/page-not-found.component";
+import {PostsComponent} from "./component/posts/posts.component";
+import {PhotosComponent} from "./component/photos/photos.component";
+import {PostItemsComponent} from "./component/post-items/post-items.component";
 
 
 const routes: Routes = [
@@ -19,14 +22,18 @@ const routes: Routes = [
     path: 'about',
     component: AboutComponent
   },
-  // {
-  //   path: 'posts',
-  //   component: PostsComponent
-  // },
-  // {
-  //   path: 'contact',
-  //   component: ContactComponent
-  // },
+  {
+    path: 'posts',
+    component: PostsComponent
+  },
+  {
+    path: 'posts/:id',
+    component: PostItemsComponent
+  },
+  {
+    path: 'photos',
+    component: PhotosComponent
+  },
   {
     path: '**',
     component: PageNotFoundComponent
